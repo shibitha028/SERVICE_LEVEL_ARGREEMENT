@@ -1,0 +1,55 @@
+.screen {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+  background: linear-gradient(135deg, #0A1628 0%, #0F2040 40%, #0A1628 100%);
+}
+.orb1, .orb2 {
+  position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none;
+}
+.orb1 { width: 500px; height: 500px; background: rgba(37,99,235,0.18); top: -100px; right: -100px; }
+.orb2 { width: 400px; height: 400px; background: rgba(139,92,246,0.12); bottom: -80px; left: -80px; }
+
+.card {
+  position: relative; z-index: 2;
+  background: rgba(15,30,60,0.92);
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 20px; padding: 40px 44px; width: 420px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.4);
+}
+
+.iconWrap {
+  width: 52px; height: 52px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; margin: 0 auto 20px;
+}
+.userIcon  { background: linear-gradient(135deg,#2563EB,#1E4FBF); }
+.adminIcon { background: linear-gradient(135deg,#7C3AED,#4C1D95); }
+
+.title { font-size: 22px; font-weight: 600; text-align: center; color: #F0F6FF; margin-bottom: 4px; }
+.sub   { font-size: 13px; color: rgba(200,215,240,0.7); text-align: center; margin-bottom: 26px; }
+
+.label {
+  display: block; font-size: 11px; font-weight: 600;
+  color: rgba(200,215,240,0.7); margin-bottom: 6px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px; font-size: 13px;
+}
+.checkLabel { display: flex; align-items: center; gap: 8px; cursor: pointer; color: rgba(200,215,240,0.7); }
+.checkLabel input { width: 15px; height: 15px; accent-color: #2563EB; }
+.forgot { color: #A3BFFA; text-decoration: none; font-size: 13px; }
+.forgot:hover { color: #fff; }
+
+.errorMsg {
+  background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3);
+  border-radius: 8px; padding: 10px 14px;
+  color: #FCA5A5; font-size: 13px; margin-bottom: 16px;
+}
+
+.switch { text-align: center; font-size: 13px; color: rgba(200,215,240,0.7); margin-top: 18px; }
+.switch a { color: #A3BFFA; text-decoration: none; font-weight: 500; }
+.switch a:hover { color: #fff; }
