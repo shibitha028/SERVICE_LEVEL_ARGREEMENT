@@ -1,6 +1,7 @@
 import axios from 'axios';
-
-const API = axios.create({ baseURL: 'http://localhost:5000/api' });
+const API = axios.create({ 
+  baseURL: 'https://sla-monitor-backend.onrender.com/api' 
+});
 
 API.interceptors.request.use((config) => {
   const stored = localStorage.getItem('sla_user');
