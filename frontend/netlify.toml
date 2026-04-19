@@ -1,6 +1,10 @@
 [build]
-  command = "npm install --legacy-peer-deps && npm run build"
+  command = "chmod +x node_modules/.bin/react-scripts && npm run build"
   publish = "build"
+  environment = { NODE_VERSION = "20" }
+
+[build.environment]
+  NPM_FLAGS = "--legacy-peer-deps"
 
 [[redirects]]
   from = "/*"
