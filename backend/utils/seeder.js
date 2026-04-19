@@ -1,6 +1,6 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-require('dotenv').config();
 
 mongoose.connect(process.env.MONGODB_URI).then(async () => {
   console.log('MongoDB connected');
@@ -51,10 +51,10 @@ mongoose.connect(process.env.MONGODB_URI).then(async () => {
   await mongoose.connection.dropDatabase();
   console.log('Database cleared');
 
-  const User     = mongoose.model('User', userSchema);
+  const User = mongoose.model('User', userSchema);
   const Contract = mongoose.model('SLAContract', contractSchema);
-  const Ticket   = mongoose.model('Ticket', ticketSchema);
-  const Alert    = mongoose.model('BreachAlert', alertSchema);
+  const Ticket = mongoose.model('Ticket', ticketSchema);
+  const Alert = mongoose.model('BreachAlert', alertSchema);
 
   const adminPass = await bcrypt.hash('Admin@123', 12);
   const admin = await User.create({
@@ -146,8 +146,9 @@ mongoose.connect(process.env.MONGODB_URI).then(async () => {
   });
 
   console.log('✅ Database seeded successfully!');
-  console.log('   Admin: admin@acme.com / Admin@123');
-  console.log('   User:  user@acme.com  / User@123');
+  console.log('Admin: admin@acme.com / Admin@123');
+  console.log('User: user@acme.com / User@123');
+
   process.exit(0);
 
 }).catch(err => {
