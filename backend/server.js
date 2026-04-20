@@ -14,7 +14,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL || 'http://localhost:3000',
+    origin: '*',
     methods: ['GET', 'POST'],
   },
 });
@@ -23,7 +23,11 @@ const io = new Server(server, {
 app.set('io', io);
 
 // Middleware
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:3000' }));
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 // Routes
